@@ -8,4 +8,4 @@ RUN sed -i 's/starlette==0.51.0/starlette==0.49.3/' requirements.lock && pip ins
 RUN useradd -u 1000 -m tbohk && mkdir -p /data/artifacts /data/accounts && chown -R 1000:1000 /app /data
 EXPOSE 8080
 USER 1000:1000
-ENTRYPOINT ["python","infra/blitz/entrypoint.py"]
+ENTRYPOINT ["python","-m","infra.blitz.entrypoint"]
